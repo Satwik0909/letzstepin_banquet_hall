@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Poppins', sans-serif;
+  @apply min-h-screen text-white bg-gradient-to-br from-purple-900 via-blue-900 to-indigo-900;
+}
+
+.glow-button {
+  @apply relative overflow-hidden transition-all duration-300 ease-out;
+}
+
+.glow-button::before {
+  content: '';
+  @apply absolute inset-0 transition-opacity duration-300 ease-out bg-white opacity-0;
+}
+
+.glow-button:hover::before {
+  @apply opacity-20;
+}
+
+.glow-button::after {
+  content: '';
+  @apply absolute inset-0 transition-opacity duration-300 ease-out bg-white opacity-0 blur-md;
+}
+
+.glow-button:hover::after {
+  @apply opacity-20;
+}
+
+.glass-card {
+  @apply bg-white bg-opacity-10 backdrop-filter backdrop-blur-lg;
+}
+
+.text-gradient {
+  @apply text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600;
+}
